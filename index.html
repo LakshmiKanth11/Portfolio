@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakshmi Kanth V — Data Analyst Portfolio</title>
+    <meta name="description"
+        content="Data Analyst portfolio of Lakshmi Kanth V — turning raw data into actionable insights with Python, SQL, Power BI and Tableau.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Floating Orbs (Antigravity) -->
+    <div class="floating-orbs">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+        <div class="orb orb-5"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>LK<span class="logo-slash">/</span><span
+                    class="logo-bracket">&gt;</span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#case-studies" class="nav-link">Case Studies</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
+                <li><a href="#contact" class="nav-link nav-link-cta">Let's Connect</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for Opportunities
+            </div>
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hi, I'm</span>
+                <span class="hero-name">Lakshmi Kanth <span class="hero-name-accent">V</span></span>
+            </h1>
+            <div class="hero-role">
+                <span class="role-prefix">I'm a</span>
+                <span class="typing-text" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-description">
+                I transform raw data into <strong>actionable insights</strong> that drive business decisions.
+                With expertise in Python, SQL, and visualization tools, I bridge the gap between
+                <strong>complex data</strong> and <strong>clear narratives</strong>.
+            </p>
+            <div class="hero-cta">
+                <a href="#case-studies" class="btn btn-primary">
+                    <span>View My Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17l9.2-9.2M17 17V8H8" />
+                    </svg>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span>Get in Touch</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="6">0</span><span class="stat-plus">+</span>
+                    <span class="stat-label">Tools Mastered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-number" data-count="2">0</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="code-title">insights.py</span>
+                </div>
+                <pre class="code-body"><code><span class="code-keyword">import</span> <span class="code-module">pandas</span> <span class="code-keyword">as</span> pd
+<span class="code-keyword">import</span> <span class="code-module">numpy</span> <span class="code-keyword">as</span> np
+
+<span class="code-comment"># Load & clean data</span>
+df = pd.read_csv(<span class="code-string">"raw_data.csv"</span>)
+df = df.dropna().reset_index()
+
+<span class="code-comment"># Extract insights</span>
+insights = df.groupby(<span class="code-string">"category"</span>)
+    .agg({<span class="code-string">"revenue"</span>: <span class="code-string">"sum"</span>})
+    .sort_values(ascending=<span class="code-keyword">False</span>)
+
+<span class="code-keyword">print</span>(<span class="code-string">"✅ Analysis complete!"</span>)
+<span class="code-comment"># → 23% revenue increase</span></code></pre>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>Scroll to explore</span>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">01 — About Me</span>
+                <h2 class="section-title">Bridging Data <span class="gradient-text">&amp; Decisions</span></h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="about-lead">
+                        I'm a <strong>Computer Science graduate</strong> specializing in Data Science from
+                        VISTAS, Chennai. I don't just analyze data — I <em>tell its story</em>.
+                    </p>
+                    <p>
+                        My approach combines rigorous analytical methodology with clear, stakeholder-friendly
+                        communication. Whether it's uncovering hidden patterns in healthcare data, automating
+                        reporting workflows, or designing interactive dashboards, I focus on delivering
+                        <strong>insights that matter</strong>.
+                    </p>
+                    <p>
+                        I believe the best analysis isn't just accurate — it's <strong>understandable</strong>.
+                        Every visualization I create, every insight I present, is crafted to help decision-makers
+                        act with confidence.
+                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <div class="highlight-icon">🎯</div>
+                            <div>
+                                <h4>Results-Driven</h4>
+                                <p>Every analysis starts with a business question and ends with actionable
+                                    recommendations.</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">🧠</div>
+                            <div>
+                                <h4>Analytical Thinker</h4>
+                                <p>Strong foundation in EDA, statistical analysis, and data-driven problem solving.</p>
+                            </div>
+                        </div>
+                        <div class="highlight">
+                            <div class="highlight-icon">📊</div>
+                            <div>
+                                <h4>Clear Communicator</h4>
+                                <p>I translate complex data findings into narratives that non-technical stakeholders
+                                    understand.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-info reveal">
+                    <div class="info-card">
+                        <h3>Quick Facts</h3>
+                        <ul class="info-list">
+                            <li><span class="info-label">Name</span><span class="info-value">Lakshmi Kanth V</span></li>
+                            <li><span class="info-label">Location</span><span class="info-value">Chennai, India</span>
+                            </li>
+                            <li><span class="info-label">Degree</span><span class="info-value">B.Tech CSE (Data
+                                    Science)</span></li>
+                            <li><span class="info-label">University</span><span class="info-value">VISTAS</span></li>
+                            <li><span class="info-label">CGPA</span><span class="info-value">7.66 / 10</span></li>
+                            <li><span class="info-label">Status</span><span
+                                    class="info-value highlight-available">Immediate Joiner</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CASE STUDIES ==================== -->
+    <section class="section case-studies" id="case-studies">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">02 — Selected Work</span>
+                <h2 class="section-title">Case <span class="gradient-text">Studies</span></h2>
+                <p class="section-subtitle">End-to-end projects showcasing my analytical process — from problem
+                    definition to measurable outcomes.</p>
+            </div>
+
+            <!-- Case Study 1 -->
+            <div class="case-card reveal">
+                <div class="case-number">01</div>
+                <div class="case-content">
+                    <div class="case-meta">
+                        <span class="case-tag">Machine Learning</span>
+                        <span class="case-tag">NLP</span>
+                        <span class="case-tag">Healthcare</span>
+                    </div>
+                    <h3 class="case-title">AI Health Sync — Smart Medical Chatbot</h3>
+                    <p class="case-subtitle">Final Year Project • End-to-End ML Pipeline</p>
+
+                    <div class="case-steps">
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">❓</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>The Problem</h4>
+                                <p>Patients struggle to quickly understand symptoms and find the right specialist.
+                                    Miscommunication and delayed consultations lead to poor health outcomes, especially
+                                    in areas with limited access to healthcare professionals.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">📂</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Data & Approach</h4>
+                                <p>Curated symptom-disease datasets and applied NLP to map natural language descriptions
+                                    to medical conditions. Built a Machine Learning classification model to predict
+                                    likely conditions from user-reported symptoms.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">🔧</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Tools & Tech</h4>
+                                <div class="tool-tags">
+                                    <span>Python</span><span>Machine Learning</span><span>NLP</span><span>Google
+                                        Colab</span><span>Ngrok</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">💡</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Key Insights</h4>
+                                <p>Symptom combinations had higher prediction accuracy than individual symptoms. Users
+                                    preferred conversational interfaces over form-based input, increasing engagement by
+                                    an estimated 40%.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">📈</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Outcome</h4>
+                                <p>Deployed a real-time medical chatbot with integrated doctor appointment booking.
+                                    Enhanced healthcare accessibility through a simple, user-friendly interface that
+                                    bridges patients and specialists.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 2 -->
+            <div class="case-card reveal">
+                <div class="case-number">02</div>
+                <div class="case-content">
+                    <div class="case-meta">
+                        <span class="case-tag">Web Scraping</span>
+                        <span class="case-tag">Automation</span>
+                        <span class="case-tag">Python</span>
+                    </div>
+                    <h3 class="case-title">Wikipedia Web Scraping & Automated Email System</h3>
+                    <p class="case-subtitle">Personal Project • Data Pipeline Automation</p>
+
+                    <div class="case-steps">
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">❓</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>The Problem</h4>
+                                <p>Manually gathering, formatting, and distributing research summaries is time-consuming
+                                    and error-prone. Teams needed a way to automatically receive curated topic summaries
+                                    without manual intervention.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">📂</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Data & Approach</h4>
+                                <p>Leveraged Wikipedia's API and HTML scraping to extract structured summaries. Applied
+                                    data cleaning with Pandas to format unstructured content into readable,
+                                    email-friendly reports.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">🔧</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Tools & Tech</h4>
+                                <div class="tool-tags">
+                                    <span>Python</span><span>BeautifulSoup</span><span>Requests</span><span>Pandas</span><span>SMTP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">💡</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Key Insights</h4>
+                                <p>Automated pipelines eliminated 100% of manual copy-paste work. Structured data
+                                    cleaning was critical — raw HTML contained inconsistent formatting that would break
+                                    email rendering.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">📈</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Outcome</h4>
+                                <p>Built a fully automated end-to-end pipeline: topic input → scraping → cleaning →
+                                    formatted email delivery via Gmail SMTP. Reduced research reporting time from hours
+                                    to seconds.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Case Study 3 -->
+            <div class="case-card reveal">
+                <div class="case-number">03</div>
+                <div class="case-content">
+                    <div class="case-meta">
+                        <span class="case-tag">SQL</span>
+                        <span class="case-tag">Database Design</span>
+                        <span class="case-tag">Internship</span>
+                    </div>
+                    <h3 class="case-title">IT Asset Inventory Management System</h3>
+                    <p class="case-subtitle">Internship Project • SQL Database Design</p>
+
+                    <div class="case-steps">
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">❓</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>The Problem</h4>
+                                <p>The organization lacked a structured system to track IT assets (laptops, monitors,
+                                    peripherals), leading to asset losses, unaccounted inventory, and poor visibility
+                                    for management decisions.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">📂</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Data & Approach</h4>
+                                <p>Designed a relational database schema from scratch with normalized tables for assets,
+                                    assignments, and maintenance history. Created SQL queries for tracking, reporting,
+                                    and performance analysis.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">🔧</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Tools & Tech</h4>
+                                <div class="tool-tags">
+                                    <span>SQL</span><span>MySQL</span><span>Database Design</span><span>Data
+                                        Reporting</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">💡</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Key Insights</h4>
+                                <p>Discovered that 15% of assets had no tracking record. Proper categorization and
+                                    assignment tracking revealed utilization patterns that enabled better procurement
+                                    planning.</p>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="step-marker">
+                                <span class="step-icon">📈</span>
+                            </div>
+                            <div class="step-content">
+                                <h4>Outcome</h4>
+                                <p>Improved asset tracking efficiency, reduced losses, and delivered management
+                                    performance reports that enhanced team communication and data-driven procurement
+                                    decisions.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">03 — Toolkit</span>
+                <h2 class="section-title">Skills & <span class="gradient-text">Tech Stack</span></h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <div class="skill-icon-wrap"><span>🐍</span></div>
+                    <h3>Programming & Querying</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="40"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">SQL / MySQL</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="35"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon-wrap"><span>📊</span></div>
+                    <h3>Analytics & BI Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Excel</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="40"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Power BI</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="30"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Tableau</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="28"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Google Sheets</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="38"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon-wrap"><span>📦</span></div>
+                    <h3>Python Libraries</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Pandas</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="38"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">NumPy</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="30"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Matplotlib</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="32"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">BeautifulSoup</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="35"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon-wrap"><span>🔍</span></div>
+                    <h3>Analysis Techniques</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Data Cleaning</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="40"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">EDA</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="35"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Visualization</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="35"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Web Scraping</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="30"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon-wrap"><span>⚙️</span></div>
+                    <h3>Dev Tools</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">VS Code</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="42"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Google Colab</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="38"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">PyCharm</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="25"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">API Integration</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="28"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="skill-category reveal">
+                    <div class="skill-icon-wrap"><span>🤝</span></div>
+                    <h3>Soft Skills</h3>
+                    <div class="skill-items">
+                        <div class="skill-item"><span class="skill-name">Analytical Thinking</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="45"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Attention to Detail</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="42"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Team Collaboration</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="40"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item"><span class="skill-name">Time Management</span>
+                            <div class="skill-bar">
+                                <div class="skill-fill" data-level="38"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section class="section experience" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">04 — Experience</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Journey</span></h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Internship</div>
+                        <h3>SQL Database Management Intern</h3>
+                        <ul>
+                            <li>Designed an IT Asset Inventory System using SQL for real-time asset tracking</li>
+                            <li>Improved tracking efficiency and reduced asset losses through structured database design
+                            </li>
+                            <li>Built performance tracking reports supporting management decision-making</li>
+                            <li>Enhanced team communication with data-driven insights and reporting workflows</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Jan 2026 — Simulation</div>
+                        <h3>Tata Group — Data Analytics Job Simulation</h3>
+                        <p class="timeline-org">Tata iQ Financial Services (via Forage)</p>
+                        <ul>
+                            <li>Performed EDA using GenAI tools to assess data quality and identify risk indicators</li>
+                            <li>Developed no-code predictive models incorporating ethical AI principles</li>
+                            <li>Created AI-driven collections strategy with automation and regulatory compliance</li>
+                        </ul>
+                        <div class="tool-tags small">
+                            <span>EDA</span><span>GenAI Analytics</span><span>Risk Analysis</span><span>Predictive
+                                Modeling</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">Dec 2025 — Simulation</div>
+                        <h3>Deloitte Australia — Data Analytics Job Simulation</h3>
+                        <p class="timeline-org">Deloitte Forensic Technology (via Forage)</p>
+                        <ul>
+                            <li>Completed data analysis and forensic technology simulation</li>
+                            <li>Created interactive data dashboards using Tableau</li>
+                            <li>Used Excel to classify data patterns and draw business conclusions</li>
+                        </ul>
+                        <div class="tool-tags small">
+                            <span>Tableau</span><span>Excel</span><span>Data
+                                Classification</span><span>Dashboarding</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">05 — Credentials</span>
+                <h2 class="section-title">Certifications & <span class="gradient-text">Education</span></h2>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card reveal">
+                    <div class="cert-badge">🏆</div>
+                    <h3>Tata Group — Data Analytics</h3>
+                    <p class="cert-issuer">Forage Job Simulation • January 2026</p>
+                    <p>AI-powered data analytics for Financial Services — EDA, GenAI, Risk Analysis, Predictive Modeling
+                    </p>
+                </div>
+                <div class="cert-card reveal">
+                    <div class="cert-badge">🏆</div>
+                    <h3>Deloitte Australia — Data Analytics</h3>
+                    <p class="cert-issuer">Forage Job Simulation • December 2025</p>
+                    <p>Data analysis and forensic technology — Tableau dashboards, Excel data classification, business
+                        insights</p>
+                </div>
+            </div>
+
+            <div class="education-grid reveal">
+                <h3 class="edu-header">Education</h3>
+                <div class="edu-items">
+                    <div class="edu-item">
+                        <div class="edu-degree">B.Tech — CSE (Data Science)</div>
+                        <div class="edu-school">VISTAS, Chennai • 2025</div>
+                        <div class="edu-score">CGPA: 7.66 / 10</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">Higher Secondary (12th)</div>
+                        <div class="edu-school">St. Joseph's MHSS • 2021</div>
+                        <div class="edu-score">82.83%</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-degree">Secondary (10th)</div>
+                        <div class="edu-school">St. Joseph's MHSS • 2019</div>
+                        <div class="edu-score">78.8%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">06 — Connect</span>
+                <h2 class="section-title">Let's Work <span class="gradient-text">Together</span></h2>
+                <p class="section-subtitle">I'm actively looking for Data Analyst opportunities. If you're hiring or
+                    want to collaborate, I'd love to hear from you.</p>
+            </div>
+            <div class="contact-grid">
+                <a href="mailto:lakshmikanth.v07@gmail.com" class="contact-card reveal">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>lakshmikanth.v07@gmail.com</p>
+                </a>
+                <a href="tel:+918838599321" class="contact-card reveal">
+                    <div class="contact-icon">📱</div>
+                    <h3>Phone</h3>
+                    <p>+91 88385 99321</p>
+                </a>
+                <a href="https://linkedin.com/in/" target="_blank" rel="noopener" class="contact-card reveal">
+                    <div class="contact-icon">🔗</div>
+                    <h3>LinkedIn</h3>
+                    <p>Connect with me</p>
+                </a>
+                <div class="contact-card reveal">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Madhavaram, Chennai — 60</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">Designed & built by <strong>Lakshmi Kanth V</strong> • 2026</p>
+                <p class="footer-tagline">Turning data into decisions, one insight at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
