@@ -3,6 +3,7 @@
 A professional, single-page portfolio website with an **antigravity aesthetic** — dark theme, floating particles, a glowing custom cursor, and premium glassmorphism design. Built to showcase data analytics projects, skills, and experience.
 
 🔗 **Live Site:** 
+https://lakshmikanth11.github.io/Portfolio/
 
 ---
 
